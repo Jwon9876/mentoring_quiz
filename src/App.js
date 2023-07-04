@@ -38,7 +38,7 @@ const WordSection = ({index, value}) => {
 		
 		setIsDisabled(true);
 		
-		if(word == value.word.toUpperCase() && meaningArr.includes(meaning)){
+		if (word == value.word.toUpperCase() && meaningArr.includes(meaning)) {
 			window.confirm("정답");
 			setIsCorrect(true);
 			return
@@ -47,15 +47,28 @@ const WordSection = ({index, value}) => {
 		window.confirm("오답");
 		setIsCorrect(false);
 		return
-
+		
 	}
 	
 	return (
 		<QuizSection
 			key={index}
 		>
-			<div>
-				{index}번
+			<div
+				style={{
+					display: "flex",
+					flexDirection: "row",
+					alignItems: "center",
+					marginBottom: 20
+				}}
+			>
+				<div
+					style={{
+						marginRight: 10
+					}}
+				>
+					{index + 1}번
+				</div>
 				<Button onClick={() => synth.speak(utterance)}>
 					단어듣기
 				</Button>
@@ -63,7 +76,7 @@ const WordSection = ({index, value}) => {
 			
 			<AnswerSection>
 				<Input
-					isCorrect = {isCorrect}
+					isCorrect={isCorrect}
 					placeholder={"단어를 입력하세요."}
 					onChange={(e) => setWord(e.target.value)}
 					// onChange={(e) => {
@@ -76,7 +89,7 @@ const WordSection = ({index, value}) => {
 				</Input>
 				
 				<Input
-					isCorrect = {isCorrect}
+					isCorrect={isCorrect}
 					placeholder={"뜻을 입력하세요."}
 					onChange={(e) => setMeaning(e.target.value)}
 					// onChange={(e) => {
@@ -95,8 +108,6 @@ const WordSection = ({index, value}) => {
 		</QuizSection>
 	)
 }
-
-
 
 
 const App = () => {
@@ -121,7 +132,7 @@ const Container = styled.div`
 
 const QuizSection = styled.div`
   height: 100px;
-  border: 1px solid;
+  border-bottom: 1px solid;
   padding: 15px;
 `;
 
@@ -131,13 +142,20 @@ const AnswerSection = styled.div`
 `;
 
 const Input = styled.input`
-	background: ${props => props.isCorrect == null ? "" : (props.isCorrect  ? "#9cdc9e" : "#dc7f81")};
-  	color: black;
-  	font-size: 25px;
+  border: 1px solid;
+  background: ${props => props.isCorrect == null ? "" : (props.isCorrect ? "#9cdc9e" : "#dc7f81")};
+  color: black;
+  font-size: 25px;
+  margin-right: 10px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 `;
 
 const Button = styled.button`
-
+	height: auto;
+  	border: 1px solid;
+  	border-radius: 10px;
 `;
 
 export default App;
