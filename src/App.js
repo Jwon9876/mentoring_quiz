@@ -24,6 +24,7 @@ const WordSection = ({index, value}) => {
 	const utterance = new SpeechSynthesisUtterance();
 	utterance.lang = "en-US"
 	utterance.text = value.word
+	utterance.rate = 0.95
 	
 	const [word, setWord] = useState("");
 	const [meaning, setMeaning] = useState("");
@@ -133,7 +134,7 @@ const Container = styled.div`
 const QuizSection = styled.div`
   height: 100px;
   border-bottom: 1px solid;
-  padding: 15px;
+  padding: 60px;
 `;
 
 const AnswerSection = styled.div`
