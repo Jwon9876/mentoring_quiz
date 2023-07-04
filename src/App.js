@@ -21,6 +21,9 @@ const temp = {};
 
 const WordSection = ({index, value}) => {
 	
+	
+	
+	
 	const utterance = new SpeechSynthesisUtterance();
 	utterance.lang = "en-US"
 	utterance.text = value.word
