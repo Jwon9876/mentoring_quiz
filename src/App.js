@@ -17,7 +17,7 @@ const Word = [
     },
     {
         "word": "undergraduate",
-        "meaning": "대학생(의), 학부생(의)"
+        "meaning": "대학생(의), 학부생(의), 대학생의, 학부생의"
     },
     {
         "word": "represent",
@@ -216,8 +216,16 @@ const WordSection = ({index, value}) => {
 	const [isCorrect, setIsCorrect] = useState(null);
 	
 	const answerCheck = (word, meaning) => {
-		word = word.toUpperCase();
-		const meaningArr = value.meaning.split(", ");
+		const reg = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"\/\s/\-]/gi;
+		
+		word = word.replaceAll(" ", "").toUpperCase();
+		
+		const meaningArr = value.meaning.replaceAll(" ", "").split(",");
+		
+		meaningArr.map((v) => {
+			console.log(v.replaceAll(reg, ""));
+		});
+		console.log(meaningArr)
 		
 		setIsDisabled(true);
 		
@@ -229,6 +237,7 @@ const WordSection = ({index, value}) => {
 		
 		window.confirm("오답");
 		setIsCorrect(false);
+		console.log(meaningArr)
 		return
 		
 	}
