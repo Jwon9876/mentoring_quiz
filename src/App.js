@@ -8,7 +8,7 @@ const synth = window.speechSynthesis;
 // 단어 섞는 부분 분리
 const Word = [
     {
-        "word": "discourage",
+        "word": "combine",
         "meaning": "그만두게 하다, 단념시키다, 낙담시키다, 실망시키다"
     },
     {
@@ -210,6 +210,8 @@ const WordSection = ({index, value}) => {
 	const answerCheck = (word, meaning) => {
 		const reg = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"\/\s/\-]/gi;
 		
+		// TODO
+		// " " -> ""
 		word = word.replaceAll(" ", "").toUpperCase();
 		
 		const meaningArr = value.meaning.replaceAll(" ", "").split(",");
