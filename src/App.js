@@ -2,6 +2,7 @@ import React, {useState} from "react";
 
 import styled from "styled-components";
 import Word from "./Word";
+
 const synth = window.speechSynthesis;
 
 // TODO
@@ -64,7 +65,7 @@ const WordSection = ({index, value}) => {
 					display: "flex",
 					flexDirection: "row",
 					alignItems: "center",
-					marginBottom: 20
+					marginBottom: 20,
 				}}
 			>
 				<div
@@ -83,11 +84,11 @@ const WordSection = ({index, value}) => {
 				<Input
 					isCorrect={isCorrect}
 					placeholder={"단어를 입력하세요."}
-					onChange={(e) => setWord(e.target.value)}
-					// onChange={(e) => {
-					// ue};	temp[index] = {...temp[index], word: e.target.val
-					// 	console.log(temp)
-					// }}
+					// onChange={(e) => setWord(e.target.value)}
+					onChange={(e) => {
+						temp[index] = {...temp[index], word: e.target.value};
+						console.log(temp)
+					}}
 					disabled={isDisabled}
 				>
 				
@@ -96,11 +97,11 @@ const WordSection = ({index, value}) => {
 				<Input
 					isCorrect={isCorrect}
 					placeholder={"뜻을 입력하세요."}
-					onChange={(e) => setMeaning(e.target.value)}
-					// onChange={(e) => {
-					// 	temp[index] = {...temp[index], meaning: e.target.value};
-					// 	console.log(temp)
-					// }}
+					// onChange={(e) => setMeaning(e.target.value)}
+					onChange={(e) => {
+						temp[index] = {...temp[index], meaning: e.target.value};
+						console.log(temp)
+					}}
 					disabled={isDisabled}
 				>
 				
@@ -117,13 +118,18 @@ const WordSection = ({index, value}) => {
 
 const App = () => {
 	
-	const shuffle = () => ( Math.random() - 0.5 );
+	const shuffle = () => (Math.random() - 0.5);
 	const shuffled = [...Word].sort(shuffle);
 	
 	console.log(JSON.stringify(shuffled, null, 4));
 	
 	return (
 		<Container>
+			<FixedHeader></FixedHeader>
+			<div
+				style={{height: "100px"}}
+			>
+			</div>
 			{
 				Word.map((v, i) => (
 					<WordSection index={i} value={v}/>
@@ -138,6 +144,22 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+const FixedHeader = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  padding: 1rem;
+  color: #fff;
+  background: teal;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 
 const QuizSection = styled.div`
   height: 100px;
