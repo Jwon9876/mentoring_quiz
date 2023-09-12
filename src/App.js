@@ -131,7 +131,8 @@ const submitQuiz = (quiz) => {
 		message: JSON.stringify(quiz)
 	}
 	
-	emailjs.send(
+	if(window.confirm("제출하시겠습니까?")){
+		emailjs.send(
 		process.env.REACT_APP_EMAILJS_SERVICE_ID,
 		process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
 		templateParams,
@@ -139,7 +140,7 @@ const submitQuiz = (quiz) => {
 	)
 		.then(() => window.confirm("success"))
 		.catch((e) => console.log(e))
-	
+	}
 }
 
 const App = () => {
