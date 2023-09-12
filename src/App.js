@@ -86,7 +86,7 @@ const WordSection = ({index, value}) => {
 					placeholder={"단어를 입력하세요."}
 					// onChange={(e) => setWord(e.target.value)}
 					onChange={(e) => {
-						temp[index] = {...temp[index], word: e.target.value};
+						temp[index + 1] = {...temp[index + 1], word: e.target.value};
 						console.log(temp)
 					}}
 					disabled={isDisabled}
@@ -99,7 +99,7 @@ const WordSection = ({index, value}) => {
 					placeholder={"뜻을 입력하세요."}
 					// onChange={(e) => setMeaning(e.target.value)}
 					onChange={(e) => {
-						temp[index] = {...temp[index], meaning: e.target.value};
+						temp[index + 1] = {...temp[index + 1], meaning: e.target.value};
 						console.log(temp)
 					}}
 					disabled={isDisabled}
@@ -125,7 +125,13 @@ const App = () => {
 	
 	return (
 		<Container>
-			<FixedHeader></FixedHeader>
+			<FixedHeader>
+				<Button
+					onClick={() => console.log(temp)}
+				>
+					제출
+				</Button>
+			</FixedHeader>
 			<div
 				style={{height: "100px"}}
 			>
