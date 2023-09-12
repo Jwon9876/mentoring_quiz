@@ -3,10 +3,15 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import Word from "./Word";
 
+import emailjs from '@emailjs/browser';
+
 const synth = window.speechSynthesis;
 
 // TODO
 // 단어 섞는 부분 분리
+
+// TODO
+// Word Index 별 재 정렬
 
 
 // TODO
@@ -27,6 +32,7 @@ const WordSection = ({index, value}) => {
 	
 	const [isCorrect, setIsCorrect] = useState(null);
 	
+	// TODO : Delete
 	const answerCheck = (word, meaning) => {
 		const reg = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"\/\s/\-]/gi;
 		
@@ -107,14 +113,34 @@ const WordSection = ({index, value}) => {
 				
 				</Input>
 				
-				<Button disabled={isDisabled} onClick={() => answerCheck(word, meaning)}>
-					정답 확인
-				</Button>
+				{/*TODO: Delete*/}
+				{/*<Button disabled={isDisabled} onClick={() => answerCheck(word, meaning)}>*/}
+				{/*	정답 확인*/}
+				{/*</Button>*/}
 			</AnswerSection>
 		</QuizSection>
 	)
 }
 
+
+const submitQuiz = (quiz) => {
+	
+	const templateParams = {
+		from_name: "test",
+		to_name: "test",
+		message: JSON.stringify(quiz)
+	}
+	
+	emailjs.send(
+		process.env.REACT_APP_EMAILJS_SERVICE_ID,
+		process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+		templateParams,
+		process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+	)
+		.then(() => window.confirm("success"))
+		.catch((e) => console.log(e))
+	
+}
 
 const App = () => {
 	
@@ -127,7 +153,7 @@ const App = () => {
 		<Container>
 			<FixedHeader>
 				<Button
-					onClick={() => console.log(temp)}
+					onClick={() => submitQuiz(temp)}
 				>
 					제출
 				</Button>
