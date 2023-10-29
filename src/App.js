@@ -29,10 +29,9 @@ const WordSection = ({index, value}) => {
 	const [meaning, setMeaning] = useState("");
 	
 	const [isDisabled, setIsDisabled] = useState(false);
-	
 	const [isCorrect, setIsCorrect] = useState(null);
 	
-	// TODO : Delete
+	// TODO : Extract
 	const answerCheck = (word, meaning) => {
 		const reg = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"\/\s/\-]/gi;
 		
@@ -82,7 +81,7 @@ const WordSection = ({index, value}) => {
 					{index + 1}번
 				</div>
 				<Button onClick={() => synth.speak(utterance)}>
-					단어듣기
+				
 				</Button>
 			</div>
 			
@@ -110,13 +109,7 @@ const WordSection = ({index, value}) => {
 					}}
 					disabled={isDisabled}
 				>
-				
 				</Input>
-				
-				{/*TODO: Delete*/}
-				{/*<Button disabled={isDisabled} onClick={() => answerCheck(word, meaning)}>*/}
-				{/*	정답 확인*/}
-				{/*</Button>*/}
 			</AnswerSection>
 		</QuizSection>
 	)
@@ -138,8 +131,8 @@ const submitQuiz = (quiz) => {
 		templateParams,
 		process.env.REACT_APP_EMAILJS_PUBLIC_KEY
 	)
-		.then(() => window.confirm("success"))
-		.catch((e) => console.log(e))
+		.then(() => window.confirm("제출되었습니다."))
+		.catch((e) => window.alert("관리자에게 문의하세요."))
 	}
 }
 
@@ -168,7 +161,6 @@ const App = () => {
 					<WordSection index={i} value={v}/>
 				))
 			}
-		
 		</Container>
 	);
 }
@@ -217,9 +209,10 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  height: auto;
+  height: 25px;
   border: 1px solid;
   border-radius: 10px;
+  width: 50px;
 `;
 
 export default App;
