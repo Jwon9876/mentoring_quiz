@@ -1,99 +1,175 @@
 const Word = [
 	{
-		"word": "adjust",
-		"meaning": "맞추다, 조정하다, 조절하다, 적응하다, 순응하다"
+		"word": "progress",
+		"meaning": "진보, 발전; 전진, 진행; 진보하다, 발전하다; 전진하다"
 	},
 	{
-		"word": "accompany",
-		"meaning": "-와 동행하다, -에 수반하여 일어나다, 반주하다"
+		"word": "propose",
+		"meaning": "제안하다; 청혼하다; (이론 등을) 제시하다"
 	},
 	{
-		"word": "account",
-		"meaning": "계좌, 보고, 보고서, 설명, 계정, 이유, 원인, 계산서, -의 이유를 밝히다, -을 설명하다, -의 원인이 되다, 차지하다"
+		"word": "produce",
+		"meaning": "생산[제조]하다; 농산물"
 	},
 	{
-		"word": "accumulate",
-		"meaning": "모으다, 축적하다, 모이다, 축적되다"
+		"word": "protect",
+		"meaning": "보호하다, 막다, 지키다"
 	},
 	{
-		"word": "accustomed",
-		"meaning": "-에 익숙해진, 습관이 된"
+		"word": "purchase",
+		"meaning": "구매하다, 구입하다; 구매, 구입"
 	},
 	{
-		"word": "appoint",
-		"meaning": "임명하다, 지정하다, 정하다"
+		"word": "predict",
+		"meaning": "예언하다, 예측[예상]하다"
 	},
 	{
-		"word": "approach",
-		"meaning": "-에 접근하다, 다가오다, 다가가다, 이야기를 꺼내다, 다루다"
+		"word": "precaution",
+		"meaning": "조심, 경계; 예방책"
 	},
 	{
-		"word": "await",
-		"meaning": "기다리다, 대기하다"
+		"word": "premature",
+		"meaning": "시기상조의, 조급한; 너무 이른, 조기의"
 	},
 	{
-		"word": "abandon",
-		"meaning": "버리다, 떠나다, 포기하다"
+		"word": "preview",
+		"meaning": "미리 보기, 사전 검토; 시사(회), 시연, 예고편; (시사, 시연 따위를) 보다[보여주다]"
 	},
 	{
-		"word": "arrogant",
-		"meaning": "거만한, 오만한"
+		"word": "forehead",
+		"meaning": "이마"
 	},
 	{
-		"word": "aboard",
-		"meaning": "탑승하여, 승선하여, 안에서"
+		"word": "foremost",
+		"meaning": "가장 중요한, 최고의; 선두의, 맨 앞[먼저]의"
 	},
 	{
-		"word": "aboard",
-		"meaning": "외국에, 해외로, 널리퍼져"
+		"word": "foresee",
+		"meaning": "예견[예지]하다"
 	},
 	{
-		"word": "alike",
-		"meaning": "비슷한, 서로 같은, 마찬가지로, 같게, 동등하게"
+		"word": "postpone",
+		"meaning": "연기하다, 뒤로 미루다"
 	},
 	{
-		"word": "arise",
-		"meaning": "발생하다, 생기다, 꺠다, 일어나다"
+		"word": "postwar",
+		"meaning": "전후(戰後)의"
 	},
 	{
-		"word": "arouse",
-		"meaning": "일으키다, 꺠우다"
+		"word": "income",
+		"meaning": "수입, 소득"
 	},
 	{
-		"word": "amaze",
-		"meaning": "깜짝 놀라게 하다"
+		"word": "intake",
+		"meaning": "섭취(량)"
 	},
 	{
-		"word": "ashamed",
-		"meaning": "부끄러워하는, 창피한"
+		"word": "infection",
+		"meaning": "감염, 오염"
 	},
 	{
-		"word": "afford",
-		"meaning": "-할 여유가 있다"
+		"word": "insight",
+		"meaning": "통찰력"
 	},
 	{
-		"word": "withdraw",
-		"meaning": "철회하다, 취소하다, 그만두다, 인출하다, 물러나다, 철수하다"
+		"word": "inherent",
+		"meaning": "내재된, 고유의"
 	},
 	{
-		"word": "withhold",
-		"meaning": "주지않다, 유보하다"
+		"word": "investment",
+		"meaning": "투자, 투자 자금"
 	},
 	{
-		"word": "withstand",
-		"meaning": "저항하다, 견디다"
+		"word": "investigate",
+		"meaning": "수사하다, 조사하다, 연구하다"
 	},
 	{
-		"word": "geography",
-		"meaning": "지리학, 지리, 지세"
+		"word": "illustrate",
+		"meaning": "설명하다, 삽화를 쓰다, 예시를 보여주다"
 	},
 	{
-		"word": "geology",
-		"meaning": "지질학, 지질학적 특징, 지질"
+		"word": "outcome",
+		"meaning": "결과, 성과"
 	},
 	{
-		"word": "geometry",
-		"meaning": "기하학"
+		"word": "outline",
+		"meaning": "개요; 윤곽, 외형; 개요를 서술하다; 윤곽을 보여주다[나타내다]"
+	},
+	{
+		"word": "outlook",
+		"meaning": "전망, 예측; 견해, 사고방식; 경치"
+	},
+	{
+		"word": "outstanding",
+		"meaning": "뛰어난, 아주 훌륭한, 두드러진"
+	},
+	{
+		"word": "outlet",
+		"meaning": "(가스, 감정 등의) 배출구, 표출 방법; 상점, 아울렛; (전기) 콘센트"
+	},
+	{
+		"word": "utmost",
+		"meaning": "최대의, 극도의"
+	},
+	{
+		"word": "overcome",
+		"meaning": "(곤란, 장애, 적 등을) 극복하다, 이겨내다, 이기다"
+	},
+	{
+		"word": "overlook",
+		"meaning": "간과하다, 못보고 넘어가다; 눈 감아 주다; (경치 등을) 내려다보다"
+	},
+	{
+		"word": "overseas",
+		"meaning": "해외로; 해외에 있는, 외국의"
+	},
+	{
+		"word": "overhead",
+		"meaning": "머리 위에, (하늘) 높이; 머리 위의"
+	},
+	{
+		"word": "overtake",
+		"meaning": "능가하다; 따라잡다, 추월하다; (재난, 감정 등이) 덮치다, 압도하다"
+	},
+	{
+		"word": "overwhelm",
+		"meaning": "압도하다; 당황하게 하다; 너무 많아 감당하기 힘들게 하다"
+	},
+	{
+		"word": "overlap",
+		"meaning": "겹치다, 포개지다; 중복되다, 공통점이 있다; 겹침, 중복"
+	},
+	{
+		"word": "overflow",
+		"meaning": "넘치다, 범람하다; ~로 넘쳐나다; 넘침, 범람; 초과"
+	},
+	{
+		"word": "extracurricular",
+		"meaning": "정규 교과 과정 이외의, (클럽 활동 등) 과외의"
+	},
+	{
+		"word": "extraterrestrial",
+		"meaning": "지구 밖의, 외계의; 외계인, 우주인"
+	},
+	{
+		"word": "extrovert",
+		"meaning": "외향적인 사람"
+	},
+	{
+		"word": "external",
+		"meaning": "외부의, 밖의"
+	},
+	{
+		"word": "misfortune",
+		"meaning": "불운, 불행, 역경"
+	},
+	{
+		"word": "mislead",
+		"meaning": "잘못 인도하다; 속이다, 오해하게 하다"
+	},
+	{
+		"word": "misbehave",
+		"meaning": "버릇 없이 굴다; 비행을 저지르다"
 	},
 ];
 
